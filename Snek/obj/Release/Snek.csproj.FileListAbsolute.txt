@@ -14,3 +14,4 @@ C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.csproj.CoreCompileInputs
 C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.csproj.Fody.CopyLocal.cache
 C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.exe
 C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.pdb
+C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.csprojAssemblyReference.cache

@@ -16,6 +16,8 @@ namespace Snek
         /// </summary>
         
         static string gameTheme = "Light"; //Defines the name of the game theme (currently Dark/Light)
+        static string[] themes = new string[] { "Light", "Dark" }; //Creates an array to store theme names
+        static int currentThemeIndex = 0; //Defines a number that indicates current theme index in themes (themes[currentThemeIndex])
         static Color snekBody; //Declares the diffirent colors used in the game for easier change depending on the theme
         static Color snekHead;
         static Color apple;
