@@ -15,9 +15,9 @@ namespace Snek
         /// Coordinates are calculated normally and then upscaled when drawn.
         /// </summary>
         
-        static string gameTheme = "Light"; //Defines the name of the game theme (currently Dark/Light)
         static string[] themes = new string[] { "Light", "Dark" }; //Creates an array to store theme names
         static int currentThemeIndex = 0; //Defines a number that indicates current theme index in themes (themes[currentThemeIndex])
+
         static Color snekBody; //Declares the diffirent colors used in the game for easier change depending on the theme
         static Color snekHead;
         static Color apple;
@@ -125,14 +125,14 @@ namespace Snek
 
         static void setColors() //Sets the game colors depending on the theme
         {
-            if (gameTheme == "Light")
+            if (themes[currentThemeIndex] == "Light")
             {
                 snekBody = Color.Black;
                 snekHead = Color.Red;
                 apple = Color.Green;
                 bg = Color.White;
             }
-            else if (gameTheme == "Dark")
+            else if (themes[currentThemeIndex] == "Dark")
             {
                 snekBody = Color.White;
                 snekHead = Color.Red;
@@ -179,14 +179,15 @@ namespace Snek
 
             if (e.Code == Keyboard.Key.Q)
             {
-                if (gameTheme == "Light")
+                int elNum = themes.Length;
+                if (currentThemeIndex >= (elNum - 1))
                 {
-                    gameTheme = "Dark";
-                }
-                else if (gameTheme == "Dark")
+                    currentThemeIndex = 0;
+                } else
                 {
-                    gameTheme = "Light";
+                    currentThemeIndex++;
                 }
+
                 setColors();
             }
         }
