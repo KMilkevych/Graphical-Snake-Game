@@ -16,7 +16,7 @@ namespace Snek
         /// </summary>
         
         static string gameTheme = "Light"; //Defines the name of the game theme (currently Dark/Light)
-        static Color snekBody; //Declares the diffirent colors used in the game for easier change depending on the theme
+        static Color snekBody; //Declares the different colors used in the game for easier change of theme
         static Color snekHead;
         static Color apple;
         static Color bg;
