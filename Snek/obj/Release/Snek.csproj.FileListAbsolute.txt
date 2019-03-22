@@ -1,0 +1,16 @@
+C:\Users\Kostya\source\repos\Snek\Snek\bin\Release\csfml-audio-2.dll
+C:\Users\Kostya\source\repos\Snek\Snek\bin\Release\csfml-graphics-2.dll
+C:\Users\Kostya\source\repos\Snek\Snek\bin\Release\csfml-system-2.dll
+C:\Users\Kostya\source\repos\Snek\Snek\bin\Release\csfml-window-2.dll
+C:\Users\Kostya\source\repos\Snek\Snek\bin\Release\openal32.dll
+C:\Users\Kostya\source\repos\Snek\Snek\bin\Release\OpenTK.dll
+C:\Users\Kostya\source\repos\Snek\Snek\bin\Release\Snek.exe.config
+C:\Users\Kostya\source\repos\Snek\Snek\bin\Release\Snek.exe
+C:\Users\Kostya\source\repos\Snek\Snek\bin\Release\Snek.pdb
+C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.exe.config
+C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.Properties.Resources.resources
+C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.csproj.GenerateResource.cache
+C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.csproj.CoreCompileInputs.cache
+C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.csproj.Fody.CopyLocal.cache
+C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.exe
+C:\Users\Kostya\source\repos\Snek\Snek\obj\Release\Snek.pdb
