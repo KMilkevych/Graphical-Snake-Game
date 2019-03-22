@@ -17,7 +17,7 @@ namespace Snek
 
         static bool gamePaused = false; //If true game is not going to update player position
 
-        static string[] themes = new string[] { "Light", "Dark" }; //Creates an array to store theme names
+        static string[] themes = new string[] { "Light", "Dark", "Pastel"}; //Creates an array to store theme names
         static int currentThemeIndex = 0; //Defines a number that indicates current theme index in themes (themes[currentThemeIndex])
 
         static Color snekBodyColor; //Declares the diffirent colors used in the game for easier change depending on the theme
@@ -175,6 +175,13 @@ namespace Snek
                 snekHeadColor = Color.Red;
                 appleColor = Color.Green;
                 backgroundColor = Color.Black;
+            }
+            else if (themes[currentThemeIndex] == "Pastel")
+            {
+                snekBodyColor = new Color(255, 146, 108);
+                snekHeadColor = new Color(232, 88, 97);
+                appleColor = new Color(255, 84, 255);
+                backgroundColor = new Color(158, 88, 232);
             }
         }
 
