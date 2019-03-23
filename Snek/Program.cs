@@ -17,6 +17,8 @@ namespace Snek
 
         static bool gamePaused = false; //If true game is not going to update player position
 
+        static int score = 0; //A variable to hold the score
+
         static string[] themes = new string[] { "Light", "Dark", "Pastel"}; //Creates an array to store theme names
         static int currentThemeIndex = 0; //Defines a number that indicates current theme index in themes (themes[currentThemeIndex])
 
@@ -24,6 +26,7 @@ namespace Snek
         static Color snekHeadColor;
         static Color appleColor;
         static Color backgroundColor;
+        static Color scoreTextColor;
 
         static int cellSize = 20; //Defines the cellsize
         static int levelWidth = 20; //Level Width in cells
@@ -34,7 +37,7 @@ namespace Snek
         static List<Vector2i> bodyParts; //Declares a global list for containing the body parts coordinates
         static int snekDirection = 2; //Defines a global snake head direction
 
-        static Vector2i appleCoordinates; //Declares the apples coordinates;
+        static Vector2i appleCoordinates; //Declares the apples coordinates;        
 
         static void Main()
         {
@@ -57,6 +60,8 @@ namespace Snek
             Clock gameClock = new Clock();            
 
             setColors(); //Sets the colors
+
+            Font scoreFont = new Font("Resources\\font.ttf"); //Loads a font for writing the score            
 
             while (window.IsOpen) //The game loop
             {
@@ -129,6 +134,9 @@ namespace Snek
                     //Adds a new bodypart to snekbody at the coordinates of the last bodypart
                     int elNum = bodyParts.Count();
                     bodyParts.Add(new Vector2i(bodyParts[elNum - 1].X, bodyParts[elNum - 1].Y));
+
+                    //Adds 1 to the score
+                    score++;
                 }
                 
                 //Clears screen to white
@@ -155,6 +163,15 @@ namespace Snek
                 cell.FillColor = appleColor;
                 window.Draw(cell);
 
+                //Draws the score
+                Text scoreText = new Text(score.ToString(), scoreFont, 100); //Creates a string holding the score which will be displayed
+                scoreText.Scale = new Vector2f(levelWidth * cellSize * (0.0016f), levelHeight * cellSize * (0.0016f)); //Sets scale of text depending on the window size
+                float textWidth = scoreText.GetLocalBounds().Width; //Gets the width of height of the text's boundingbox
+                float textHeight = scoreText.GetLocalBounds().Height;
+                scoreText.Position = new Vector2f(levelWidth*cellSize - textWidth, levelHeight * cellSize - textHeight); //Sets the position to bottom right using the data from before
+                scoreText.Color = scoreTextColor; //Sets text's color
+                window.Draw(scoreText); //draws the text
+
                 //Displayes the backbuffer
                 window.Display();
             }
@@ -168,6 +185,7 @@ namespace Snek
                 snekHeadColor = Color.Red;
                 appleColor = Color.Green;
                 backgroundColor = Color.White;
+                scoreTextColor = Color.Black;
             }
             else if (themes[currentThemeIndex] == "Dark")
             {
@@ -175,13 +193,15 @@ namespace Snek
                 snekHeadColor = Color.Red;
                 appleColor = Color.Green;
                 backgroundColor = Color.Black;
+                scoreTextColor = Color.White;
             }
             else if (themes[currentThemeIndex] == "Pastel")
             {
-                snekBodyColor = new Color(255, 146, 108);
-                snekHeadColor = new Color(232, 88, 97);
-                appleColor = new Color(255, 84, 255);
-                backgroundColor = new Color(158, 88, 232);
+                snekBodyColor = new Color(47, 204, 191);
+                snekHeadColor = new Color(255, 47, 126);
+                appleColor = new Color(84, 255, 144);
+                backgroundColor = new Color(111, 153, 150);
+                scoreTextColor = new Color(204, 47, 185);
             }
         }
 
