@@ -16,6 +16,7 @@ namespace Snek
         /// </summary>
 
         static bool gamePaused = false; //If true game is not going to update player position
+        static bool playerDead = false; //If true game is not going to update player position
 
         static int score = 0; //A variable to hold the score
 
@@ -68,7 +69,7 @@ namespace Snek
                 window.DispatchEvents();
 
                 //All game logic starts from here
-                if (!gamePaused) //Only update and check collissions if game not paused
+                if (!gamePaused && !playerDead) //Only update and check collissions if game not paused
                 {
                     //Defines variables to store past head coordinates so that the snake can be moved a step back when it dies (looks prettier)
                     Vector2i previousHeadCoordinates = new Vector2i(0, 0);
@@ -105,8 +106,8 @@ namespace Snek
                     //Check for collissions with walls
                     if (bodyParts[0].X < 0 || bodyParts[0].X > 19 || bodyParts[0].Y < 0 || bodyParts[0].Y > 19)
                     {
-                        //Pause game
-                        gamePaused = true;
+                        //Kill player
+                        playerDead = true;
 
                         //Move snek head a step back
                         bodyParts[0] = previousHeadCoordinates;
@@ -117,8 +118,8 @@ namespace Snek
                     {
                         if (bodyParts[0].X == bodyParts[i].X && bodyParts[0].Y == bodyParts[i].Y)
                         {
-                            //Pause game
-                            gamePaused = true;
+                            //Kill player
+                            playerDead = true;
 
                             //Move snek head a step back
                             bodyParts[0] = previousHeadCoordinates;
@@ -253,6 +254,11 @@ namespace Snek
                 }
 
                 setColors();
+            }
+
+            if (e.Code == Keyboard.Key.Space)
+            {
+                gamePaused = !gamePaused;
             }
         }
     }
